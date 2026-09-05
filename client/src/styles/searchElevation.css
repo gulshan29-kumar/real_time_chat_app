@@ -1,0 +1,4 @@
+/* Search input focus depth */
+.search-input-elevated:focus {
+  transform: scale(1.005);
+}
