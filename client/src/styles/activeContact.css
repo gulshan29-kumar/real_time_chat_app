@@ -1,0 +1,4 @@
+/* Active contact border highlight */
+.contact-selected-glow {
+  border-left: 3px solid #8b5cf6;
+}
