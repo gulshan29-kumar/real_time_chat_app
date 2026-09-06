@@ -1,0 +1,5 @@
+/* Input focus accent glow */
+.input-glow:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.25);
+}
