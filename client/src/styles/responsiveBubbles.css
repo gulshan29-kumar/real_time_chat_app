@@ -1,0 +1,7 @@
+/* Mobile bubble styling */
+@media (max-width: 640px) {
+  .chat-bubble-mobile {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+}
