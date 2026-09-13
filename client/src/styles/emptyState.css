@@ -1,0 +1,4 @@
+/* Empty chat state styling */
+.empty-state-gradient {
+  background: radial-gradient(circle at 50% 40%, rgba(99, 102, 241, 0.12), transparent 60%);
+}
