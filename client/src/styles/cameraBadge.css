@@ -1,0 +1,7 @@
+/* Camera badge overlay */
+.camera-badge-hover {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.camera-badge-hover:hover {
+  transform: scale(1.05);
+}
