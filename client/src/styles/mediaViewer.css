@@ -1,0 +1,7 @@
+/* Media viewer zoom overlay */
+.media-card-zoom {
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.media-card-zoom:hover {
+  transform: scale(1.04);
+}
