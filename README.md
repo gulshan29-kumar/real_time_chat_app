@@ -2,7 +2,12 @@
 
 > A modern, high-performance real-time chat application built by **Gulshan Kumar (IIIT Ranchi)**.
 
-![QuickChat Preview](client/public/favicon.svg)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-Vercel-success?style=for-the-badge&logo=vercel)](https://realtimechatapp-ashen.vercel.app/login)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/gulshan29-kumar/real_time_chat_app)
+[![React](https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react)](https://react.dev/)
+[![Socket.IO](https://img.shields.io/badge/Socket.io-Realtime-010101?style=for-the-badge&logo=socketdotio)](https://socket.io/)
+
+🔗 **Live Deployment**: **[QuickChat | Real-Time Chat by Gulshan Kumar](https://realtimechatapp-ashen.vercel.app/login)**
 
 ---
 
@@ -18,6 +23,7 @@
 - **Institution**: Indian Institute of Information Technology (IIIT) Ranchi
 - **GitHub**: [gulshan29-kumar](https://github.com/gulshan29-kumar)
 - **Repository**: [real_time_chat_app](https://github.com/gulshan29-kumar/real_time_chat_app.git)
+- **Live Demo**: [QuickChat | Real-Time Chat by Gulshan Kumar](https://realtimechatapp-ashen.vercel.app/login)
 
 ---
 
@@ -30,7 +36,7 @@
 - **🛡️ Secure Authentication**: JSON Web Token (JWT) based login and signup with password hashing.
 - **📱 Responsive Across Devices**: Tailored fluid layouts for desktop, tablet, and mobile screens.
 - **📬 Unread Message Badges**: Real-time counter of unread messages per contact.
-- **☁️ Deployment Ready**: Pre-configured `vercel.json` and monorepo scripts for deployment on Vercel.
+- **☁️ Deployment Ready**: Live on Vercel with serverless API and same-origin routing.
 
 ---
 
@@ -80,10 +86,11 @@ project1/
 │   ├── models/                 # User and Message schemas
 │   ├── routes/                 # Express API routes
 │   ├── package.json            # Server dependencies & scripts
-│   ├── server.js               # Main server & Socket.IO initialization
-│   └── vercel.json             # Serverless routing config
+│   └── server.js               # Main server & Socket.IO initialization
+├── api/                        # Vercel Serverless Function entrypoint
+│   └── index.js
 ├── .gitignore                  # Git ignore rules
-├── package.json                # Monorepo root scripts
+├── package.json                # Monorepo root scripts & dependencies
 ├── vercel.json                 # Monorepo root Vercel configuration
 └── README.md                   # Project documentation
 ```
@@ -96,7 +103,7 @@ project1/
 ```env
 VITE_BACKEND_URL=http://localhost:5000
 ```
-*(When deployed, set `VITE_BACKEND_URL` to your production backend URL)*
+*(On Vercel, this can be left blank for same-origin routing, or set to your live backend domain)*
 
 ### Server (`server/.env`)
 ```env
@@ -145,26 +152,11 @@ The application will be accessible at `http://localhost:5173`.
 
 ---
 
-## 🚀 Deploying to Vercel
+## 🚀 Live Production Deployment
 
-### Option 1: Deploying the Frontend on Vercel (Recommended)
-1. Push your repository to GitHub (`https://github.com/gulshan29-kumar/real_time_chat_app.git`).
-2. Log in to [Vercel](https://vercel.com) and click **"Add New Project"**.
-3. Import `real_time_chat_app`.
-4. In Project Settings:
-   - **Root Directory**: `client` (or leave default with the root `vercel.json` included in this repo)
-   - **Framework Preset**: Vite
-   - **Environment Variables**:
-     - `VITE_BACKEND_URL`: Your live backend server URL (e.g. deployed on Render, Railway, or Vercel).
-5. Click **Deploy**.
-
-### Option 2: Deploying the Server (Render / Railway / Fly)
-Because Socket.IO requires persistent WebSocket connections, deploying the Node/Express backend to platforms like [Render.com](https://render.com) or [Railway.app](https://railway.app) provides the best real-time performance:
-1. Create a Web Service pointing to the `server/` directory.
-2. Build command: `npm install`
-3. Start command: `node server.js`
-4. Supply your `MONGODB_URI`, `JWT_SECRET`, and `CLOUDINARY_*` environment variables.
-5. Copy the assigned URL and set it as `VITE_BACKEND_URL` on your Vercel client deployment.
+- **Live URL**: **[https://realtimechatapp-ashen.vercel.app/login](https://realtimechatapp-ashen.vercel.app/login)**
+- **Platform**: Vercel
+- **Continuous Deployment**: Automated on every push to `main` branch.
 
 ---
 
