@@ -4,9 +4,20 @@
   "private": true,
   "description": "Full-Stack Real-Time Chat Application by Gulshan Kumar (IIIT Ranchi)",
   "author": "Gulshan Kumar (IIIT Ranchi) <gulshankumar29082006@gmail.com>",
+  "type": "module",
   "scripts": {
     "build": "npm --prefix client run build",
     "dev": "npm --prefix client run dev",
     "server": "npm --prefix server run start"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "cloudinary": "^2.6.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.14.1",
+    "socket.io": "^4.8.1"
   }
 }

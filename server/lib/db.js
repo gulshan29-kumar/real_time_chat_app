@@ -1,11 +1,25 @@
 import mongoose from "mongoose";
 
-// Function to connect to the mongodb database
-export const connectDB = async () =>{
+let isConnected = false;
+
+// Function to connect to the mongodb database with connection pooling for serverless
+export const connectDB = async () => {
+    if (isConnected || mongoose.connection.readyState === 1) {
+        return;
+    }
     try {
-        mongoose.connection.on('connected', ()=> console.log('Database Connected'));
-       await mongoose.connect(`${process.env.MONGODB_URI}/chat-app`) 
+        const uri = process.env.MONGODB_URI;
+        if (!uri) {
+            console.warn("MONGODB_URI is not configured yet in environment variables.");
+            return;
+        }
+        mongoose.connection.on('connected', () => console.log('Database Connected'));
+        const connectionString = uri.includes('?') 
+            ? uri 
+            : `${uri.replace(/\/$/, '')}/chat-app`;
+        await mongoose.connect(connectionString);
+        isConnected = true;
     } catch (error) {
-        console.log(error);
+        console.error("MongoDB Connection Error:", error);
     }
 }
